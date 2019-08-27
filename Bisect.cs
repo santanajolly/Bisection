@@ -46,29 +46,33 @@ namespace Bisection_Algorithm
             int middle = 0;
             int count = 0;
 
-            while (list[middle] != usernum)
+            while (middle != usernum)
             {
+                //count++;
                 middle = (first + last) / 2;
-                if (list[middle] > usernum)
+                if (middle > usernum)
                 {
 
                     count++;
                     last = middle - 1;
+                    //middle = (first + last) / 2;
 
                     Console.WriteLine($"The range of numbers is {first} - {last}");
-                    Console.WriteLine($"Your number is less than {middle}.");
+                    //Console.WriteLine($"Your number is less than {middle}.");
                 }
-                else if (list[middle] < usernum)
+                else if (middle < usernum)
                 {
                     count++;
                     first = middle + 1;
+                    //middle = (first + last) / 2;
                     Console.WriteLine($"The range of numbers is {first} - {last}");
-                    Console.WriteLine($"Your number is more than {middle}.");
+                    //Console.WriteLine($"Your number is more than {middle}.");
                 }
-
             }
-
             Console.WriteLine($"It took {count} iterations to find {usernum}.");
+            //Console.ReadLine();
+            //UserInput();
+
         }
     }
 }
